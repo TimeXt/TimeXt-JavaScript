@@ -1,0 +1,9 @@
+export const Week = 7 * 24 * 60 * 60;
+export const Day = 24 * 60 * 60;
+export const Hour = 60 * 60;
+export const Minute = 60;
+export const Second = 1;
+export const MilliSecond = 1e-3;
+export const MicroSecond = 1e-6;
+export const NanoSecond = 1e-9;
+export const PicoSecond = 1e-12;
