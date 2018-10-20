@@ -1,10 +1,10 @@
-# TimeXt-JavaScript - master branch
+# TimeXt-JavaScript - develop branch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/releases/timext-2018-10-20-1.min.js)
-[![Version](https://img.shields.io/badge/version-v0.1.0.181020-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/releases/)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/releases/timext-2018-10-20-1.min.js)
+[![Version](https://img.shields.io/badge/version-v0.1.0.181020-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/releases/)
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
@@ -42,4 +42,4 @@ const dividedDuration = timext(2500, Unit.PicoSecond).times(2);
 
 ## License
 
-TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/LICENSE.md) for details.
+TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/LICENSE.md) for details.
