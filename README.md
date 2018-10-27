@@ -1,11 +1,11 @@
-# TimeXt-JavaScript - develop branch
+# TimeXt-JavaScript - master branch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/releases/timext-2018-10-27-2.min.js)
-[![Version](https://img.shields.io/badge/version-v0.2.2.181027-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/releases/)
-[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/test/)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/releases/timext-2018-10-27-2.min.js)
+[![Version](https://img.shields.io/badge/version-v0.2.2.181027-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/releases/)
+[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/test/)
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
 
@@ -66,4 +66,4 @@ const threeWeeksAgo = Date.now.minus(Number(3).toWeeks());
 
 ## License
 
-TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/LICENSE.md) for details.
+TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/LICENSE.md) for details.
