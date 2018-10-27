@@ -11,9 +11,9 @@
     "timext": true
   },
   "rules": {
-    "semi": [
-      2,
-      "never"
+    "max-len": [
+      "error",
+      200
     ],
     "comma-dangle": [
       "error",
@@ -39,6 +39,15 @@
     "import/extensions": [
       2,
       "ignorePackages"
-    ]
+    ],
+    "semi": "off",
+    "no-extend-native": "off",
+    "linebreak-style": "off",
+    "indent": "off",
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "padded-blocks": "off",
+    "no-var": "off",
+    "vars-on-top": "off"
   }
 }

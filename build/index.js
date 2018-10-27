@@ -1,14 +1,14 @@
 const rollup = require('rollup')
 const configFactory = require('./rollup.config')
-const fs = require('fs')
-const util = require('util')
-const path = require('path')
+// const fs = require('fs')
+// const util = require('util')
+// const path = require('path')
 
-const { promisify } = util
+// const { promisify } = util
 
-const promisifyReadDir = promisify(fs.readdir)
+// const promisifyReadDir = promisify(fs.readdir)
 
-const formatName = n => n.replace(/\.js/, '').replace('-', '_')
+// const formatName = n => n.replace(/\.js/, '').replace('-', '_')
 
 async function build(option) {
   const bundle = await rollup.rollup(option.input)

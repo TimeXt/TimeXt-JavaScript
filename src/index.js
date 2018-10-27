@@ -1,104 +1,125 @@
-import * as Unit from './units';
+import * as u from './units';
 
-class Interval {
+class TimeXt {
 
-    constructor(value, unit) {
-        this.value = value;
+    constructor(val, unit) {
+        this.val = val;
         this.unit = unit;
     }
 
     inWeeks() {
-        return (this.value * this.unit) / Unit.Week;
+        return (this.val * this.unit) / u.W;
     }
 
     inDays() {
-        return (this.value * this.unit) / Unit.Day;
+        return (this.val * this.unit) / u.D;
     }
 
     inHours() {
-        return (this.value * this.unit) / Unit.Hour;
+        return (this.val * this.unit) / u.H;
     }
 
     inMinutes() {
-        return (this.value * this.unit) / Unit.Minute;
+        return (this.val * this.unit) / u.M;
     }
 
     inSeconds() {
-        return (this.value * this.unit) / Unit.Second;
+        return (this.val * this.unit) / u.S;
     }
 
-    inMilliSeconds() {
-        return (this.value * this.unit) / Unit.MilliSecond;
+    inMilliseconds() {
+        return (this.val * this.unit) / u.MS;
     }
 
-    inMicroSeconds() {
-        return (this.value * this.unit) / Unit.MicroSecond;
+    plus(t) {
+        this.val = ((this.inMilliseconds() + t.inMilliseconds()) / this.unit) * u.MS;
+        return this;
     }
 
-    inNanoSeconds() {
-        return (this.value * this.unit) / Unit.NanoSecond;
+    minus(t) {
+        this.val = ((this.inMilliseconds() - t.inMilliseconds()) / this.unit) * u.MS;
+        return this;
     }
 
-    inPicoSeconds() {
-        return (this.value * this.unit) / Unit.PicoSecond;
+    multiply(val) {
+        this.val *= val;
+        return this;
     }
 
-    plus(interval) {
-        this.value = ((this.inPicoSeconds() + interval.inPicoSeconds()) / this.unit) * Unit.PicoSecond;
-		return this;
-    }
-
-    minus(interval) {
-        this.value = ((this.inPicoSeconds() - interval.inPicoSeconds()) / this.unit) * Unit.PicoSecond;
-		return this;
-    }
-
-    times(timesValue) {
-        this.value *= timesValue;
-		return this;
-    }
-
-    div(diversionValue) {
-        if (diversionValue === 0){
+    divide(val) {
+        if (val === 0) {
             throw Error('Diversion value may not be 0!');
         }
-        this.value /= diversionValue;
-		return this;
+        this.val /= val;
+        return this;
     }
 
     inc() {
-        this.value++;
-		return this;
+        this.val++;
+        return this;
     }
 
     dec() {
-        this.value--;
-		return this;
+        this.val--;
+        return this;
     }
 
-    compareTo(interval) {
-        return this.inMilliSeconds() - interval.inMilliSeconds();
+    compareTo(t) {
+        if (!t) {
+            return this.inMilliseconds();
+        }
+        return this.inMilliseconds() - t.inMilliseconds();
     }
 
-    contains(interval) {
-        return this.inPicoSeconds() >= interval.inPicoSeconds();
-    }
-
-    equals(interval) {
-        return !!interval && this.compareTo(interval) === 0;
+    equals(t) {
+        return !!t && this.compareTo(t) === 0;
     }
 
     hashCode() {
-        return this.inPicoSeconds();
+        return this.inMilliseconds();
     }
 
     toString() {
-        return this.inMilliSeconds().toString();
+        return this.inMilliseconds().toString();
     }
 }
 
-const timext = (value, unit) => {
-    return new Interval(value, unit);
+const timext = (val, unit) => new TimeXt(val, unit);
+
+// Date extensions
+
+Date.prototype.plus = function (val) {
+    return new Date(this.getTime() + val.inMilliseconds());
+}
+
+Date.prototype.minus = function (val) {
+    return new Date(this.getTime() - val.inMilliseconds());
+}
+
+// Number extensions
+
+Number.prototype.toWeeks = function () {
+    return timext(this, u.W);
+}
+
+Number.prototype.toDays = function () {
+    return timext(this, u.D);
+}
+
+Number.prototype.toHours = function () {
+    return timext(this, u.H);
+}
+
+Number.prototype.toMinutes = function () {
+    return timext(this, u.M);
+}
+
+Number.prototype.toSeconds = function () {
+    return timext(this, u.S);
+}
+
+Number.prototype.toMilliseconds = function () {
+    return timext(this, u.MS);
 }
 
 export default timext;

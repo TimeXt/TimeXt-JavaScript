@@ -1,6 +1,6 @@
 {
-  "name": "timext-javascript",
-  "version": "0.1.0",
+  "name": "timext-js",
+  "version": "0.2.2",
   "description": "",
   "main": "timext.min.js",
   "types": "",

@@ -3,40 +3,64 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/releases/timext-2018-10-20-1.min.js)
-[![Version](https://img.shields.io/badge/version-v0.1.0.181020-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/releases/)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/develop/releases/timext-2018-10-27-2.min.js)
+[![Version](https://img.shields.io/badge/version-v0.2.2.181027-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/releases/)
+[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/develop/test/)
+
+[![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-This library shall help to reduce code like
+This minimized ( < 2kB) library shall help to reduce code like
 
 ```javascript
-const dayInMillis = 24 * 60 * 60 * 1000;							// Represent a day in milliSeconds
+const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds
 ```
 
 ## How to use
 
+If you want to use the original files
+
 ```javascript
 import timext from '../src/index';
-import * as Unit from '../src/units';
+import * as u from '../src/units';
 
-const oneWeek = timext(1, Unit.Week);
-const threeDays = timext(3, Unit.Day);
-const elevenHours = timext(11, Unit.Hour);
-const sixMinutes = timext(6, Unit.Minute);
-const fiftySeconds = timext(50, Unit.Second);
-const hundredMilliSeconds = timext(100, Unit.MilliSecond);
-const fiveMicroSeconds = timext(5, Unit.MicroSecond);
-const oneNanoSecond = timext(1, Unit.NanoSecond);
-const onePicoSecond = timext(1, Unit.PicoSecond);
+// Create by using constructor method
+const oneWeek = timext(1, u.W);
+const threeDays = timext(3, u.D);
+const elevenHours = timext(11, u.H);
+const sixMinutes = timext(6, u.M);
+const fiftySeconds = timext(50, u.S);
+const hundredMilliseconds = timext(100, u.MS);
 
-const oneDayInMillis = timext(1, Unit.Day).inMilliSeconds();    	// Converts one day into milliseconds
-const twoWeeksInHours = timext(2, Unit.Week).inHours();  		    // Converts two weeks into hours
+// Convert to other time units
+const oneDayInMillis = timext(1, u.D).inMilliseconds();    // Converts one day into milliseconds
+const twoWeeksInHours = timext(2, u.W).inHours();          // Converts two weeks into hours
 
-const duration = timext(1, Unit.Day).plus(timext(6, Unit.Hour));
-const difference = timext(34, Unit.Minute).minus(timext(420, Unit.Second));
-const multipliedDuration = timext(2, Unit.Week).times(1.5);
-const dividedDuration = timext(2500, Unit.PicoSecond).times(2);
+// "operator" + - * /
+const duration = timext(1, u.D).plus(timext(6, u.H));
+const difference = timext(34, u.M).minus(timext(420, u.S));
+const multipliedDuration = timext(2, u.W).multiply(1.5);
+const dividedDuration = timext(2500, u.MS).divide(2);
+
+```
+
+If you want to use the minified script from the releases
+
+```javascript
+import 'timext.min';
+
+// Create by using number extensions
+const oneWeek = Number(1).toWeeks();                       // returns timext(1, u.W)
+const threeDays = Number(3).toDays();                      // returns timext(3, u.D)
+const elevenHours = Number(11).toHours();                  // returns timext(11, u.H)
+const sixMinutes = Number(6).toMinutes();                  // returns timext(6, u.M)
+const fiftySeconds = Number(50).toSeconds();               // returns timext(50, u.S)
+const hundredMilliseconds = Number(100).toMilliseconds();  // returns timext(100, u.MS)
+
+// add timext to date using date extensions
+const inFiveDays = Date.now.plus(Number(5).toDays());
+const threeWeeksAgo = Date.now.minus(Number(3).toWeeks());
 
 ```
 

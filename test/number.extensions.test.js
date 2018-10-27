@@ -1,15 +1,11 @@
 import timext from '../src/index';
-import * as Extensions from '../src/number.extensions';
-import * as Unit from '../src/units';
+import * as u from '../src/units';
 
-it('All Extensions should work as exptected', () => {
-    expect(Extensions.toWeeks(5)).toEqual(timext(5, Unit.Week));
-    expect(Extensions.toDays(5)).toEqual(timext(5, Unit.Day));
-    expect(Extensions.toHours(5)).toEqual(timext(5, Unit.Hour));
-    expect(Extensions.toMinutes(5)).toEqual(timext(5, Unit.Minute));
-    expect(Extensions.toSeconds(5)).toEqual(timext(5, Unit.Second));
-    expect(Extensions.toMilliSeconds(5)).toEqual(timext(5, Unit.MilliSecond));
-    expect(Extensions.toMicroSeconds(5)).toEqual(timext(5, Unit.MicroSecond));
-    expect(Extensions.toNanoSeconds(5)).toEqual(timext(5, Unit.NanoSecond));
-    expect(Extensions.toPicoSeconds(5)).toEqual(timext(5, Unit.PicoSecond));
+it('All Number extensions should work as exptected', () => {
+    expect(Number(5).toWeeks()).toEqual(timext(5, u.W));
+    expect(Number(5).toDays()).toEqual(timext(5, u.D));
+    expect(Number(5).toHours()).toEqual(timext(5, u.H));
+    expect(Number(5).toMinutes()).toEqual(timext(5, u.M));
+    expect(Number(5).toSeconds()).toEqual(timext(5, u.S));
+    expect(Number(5).toMilliseconds()).toEqual(timext(5, u.MS));
 })
