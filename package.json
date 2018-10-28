@@ -1,7 +1,7 @@
 {
   "name": "timext-js",
-  "version": "0.3.0",
-  "description": "2kB time library to handle date and time more easily",
+  "version": "0.4.0",
+  "description": "3kB time library to handle date and time more easily",
   "main": "timext.min.js",
   "types": "",
   "scripts": {
@@ -28,7 +28,7 @@
   ],
   "size-limit": [
     {
-      "limit": "2.00 KB",
+      "limit": "3.00 KB",
       "path": "timext.min.js"
     }
   ],
