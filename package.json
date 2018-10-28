@@ -1,7 +1,7 @@
 {
   "name": "timext-js",
-  "version": "0.2.2",
-  "description": "",
+  "version": "0.3.0",
+  "description": "2kB time library to handle date and time more easily",
   "main": "timext.min.js",
   "types": "",
   "scripts": {
@@ -9,7 +9,8 @@
     "lint": "./node_modules/.bin/eslint src/* test/* build/*",
     "build": "cross-env BABEL_ENV=build node build",
     "sauce": "npx karma start karma.sauce.conf.js",
-    "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3"
+    "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
+    "size": "size-limit && gzip-size timext.min.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,12 @@
   "license": "MIT",
   "pre-commit": [
     "lint"
+  ],
+  "size-limit": [
+    {
+      "limit": "2.00 KB",
+      "path": "timext.min.js"
+    }
   ],
   "jest": {
     "roots": [
@@ -57,7 +64,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jest": "^21.26.2",
     "gzip-size-cli": "^2.1.0",
     "jasmine-core": "^2.99.1",
     "jest": "^22.4.3",
@@ -67,7 +74,9 @@
     "pre-commit": "^1.2.2",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^4.0.0-beta.4",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "size-limit": "^0.18.0",
+    "typescript": "^2.8.3"
   },
   "dependencies": {}
 }

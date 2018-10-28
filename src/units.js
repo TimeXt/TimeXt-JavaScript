@@ -1,3 +1,4 @@
+export const Y = 365 * 24 * 60 * 60 * 1e3;
 export const W = 7 * 24 * 60 * 60 * 1e3;
 export const D = 24 * 60 * 60 * 1e3;
 export const H = 60 * 60 * 1e3;
