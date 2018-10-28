@@ -1,17 +1,16 @@
 # TimeXt-JavaScript - master branch
 
+[![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/releases/timext-2018-10-28-2.min.js)
+[![Version](https://img.shields.io/badge/version-v0.4.0.181028-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/releases)
+[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/coverage/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/releases/timext-2018-10-28-1.min.js)
-[![Version](https://img.shields.io/badge/version-v0.3.0.181028-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/releases/)
-[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/coverage/)
-
-[![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-This minimized ( < 2kB) library shall help to reduce code like
+This minimized ( < 3kB) library shall help to reduce code like
 
 ```javascript
 const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds
@@ -60,9 +59,13 @@ const sixMinutes = Number(6).toMinutes();                  // returns timext(6, 
 const fiftySeconds = Number(50).toSeconds();               // returns timext(50, u.S)
 const hundredMilliseconds = Number(100).toMilliseconds();  // returns timext(100, u.MS)
 
+// Return in other time units
+const oneDayInMillis = Number(1).toDays().inMilliseconds();// Returns one day in milliseconds === 24 * 60 * 60 * 1e3
+const twoWeeksInHours = Number(2).toWeeks().inHours();     // Returns two weeks in hours === 2 * 7 * 24
+
 // Convert to other time units
-const oneDayInMillis = Number(1).toDays().inMilliseconds();// Converts one day into milliseconds === 24 * 60 * 60 * 1e3
-const twoWeeksInHours = Number(2).toWeeks().inHours();     // Converts two weeks into hours === 2 * 7 * 24
+const oneDayInMillis = Number(1).toDays().toHours();       // Converts one day into timext(24, u.H)
+const twoWeeksInHours = Number(120).toMinutes().toHours(); // Converts 120 hours into timext(2, u.H)
 
 // add timext to date using date extensions
 const inFiveDays = Date.now.plus(Number(5).toDays());

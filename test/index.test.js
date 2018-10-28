@@ -1,7 +1,7 @@
 import timext from '../src/index';
 import * as u from '../src/units';
 
-it('All conversions should work as expected', () => {
+it('All in conversions should work as expected', () => {
     expect(Math.round(timext(730, u.D).inYears())).toBe(2);
     expect(Math.round(timext(21, u.D).inWeeks())).toBe(3);
     expect(Math.round(timext(1, u.Y).inDays())).toBe(365);
@@ -10,6 +10,17 @@ it('All conversions should work as expected', () => {
     expect(Math.round(timext(2, u.H).inMinutes())).toBe(120);
     expect(Math.round(timext(2, u.M).inSeconds())).toBe(120);
     expect(Math.round(timext(2, u.S).inMilliseconds())).toBe(2000);
+})
+
+it('All to conversions should work as expected', () => {
+    expect(timext(730, u.D).toYears()).toEqual(timext(2, u.Y));
+    expect(timext(21, u.D).toWeeks()).toEqual(timext(3, u.W));
+    expect(timext(1, u.Y).toDays()).toEqual(timext(365, u.D));
+    expect(timext(2, u.W).toDays()).toEqual(timext(14, u.D));
+    expect(timext(2, u.D).toHours()).toEqual(timext(48, u.H));
+    expect(timext(2, u.H).toMinutes()).toEqual(timext(120, u.M));
+    expect(timext(2, u.M).toSeconds()).toEqual(timext(120, u.S));
+    expect(timext(2, u.S).toMilliseconds()).toEqual(timext(2000, u.MS));
 })
 
 it('All arithmetic operator should work as expected', () => {

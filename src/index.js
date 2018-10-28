@@ -35,6 +35,34 @@ class TimeXt {
         return (this.val * this.unit) / u.MS;
     }
 
+    toYears() {
+        return new TimeXt(this.inYears(), u.Y);
+    }
+
+    toWeeks() {
+        return new TimeXt(this.inWeeks(), u.W);
+    }
+
+    toDays() {
+        return new TimeXt(this.inDays(), u.D);
+    }
+
+    toHours() {
+        return new TimeXt(this.inHours(), u.H);
+    }
+
+    toMinutes() {
+        return new TimeXt(this.inMinutes(), u.M);
+    }
+
+    toSeconds() {
+        return new TimeXt(this.inSeconds(), u.S);
+    }
+
+    toMilliseconds() {
+        return new TimeXt(this.inMilliseconds(), u.MS);
+    }
+
     plus(t) {
         this.val = ((this.inMilliseconds() + t.inMilliseconds()) / this.unit) * u.MS;
         return this;
