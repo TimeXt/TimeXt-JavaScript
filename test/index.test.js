@@ -2,7 +2,9 @@ import timext from '../src/index';
 import * as u from '../src/units';
 
 it('All conversions should work as expected', () => {
+    expect(Math.round(timext(730, u.D).inYears())).toBe(2);
     expect(Math.round(timext(21, u.D).inWeeks())).toBe(3);
+    expect(Math.round(timext(1, u.Y).inDays())).toBe(365);
     expect(Math.round(timext(2, u.W).inDays())).toBe(14);
     expect(Math.round(timext(2, u.D).inHours())).toBe(48);
     expect(Math.round(timext(2, u.H).inMinutes())).toBe(120);

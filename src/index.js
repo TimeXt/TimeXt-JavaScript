@@ -7,6 +7,10 @@ class TimeXt {
         this.unit = unit;
     }
 
+    inYears() {
+        return (this.val * this.unit) / u.Y;
+    }
+
     inWeeks() {
         return (this.val * this.unit) / u.W;
     }
@@ -97,6 +101,10 @@ Date.prototype.minus = function (val) {
 }
 
 // Number extensions
+
+Number.prototype.toYears = function () {
+    return timext(this, u.Y);
+}
 
 Number.prototype.toWeeks = function () {
     return timext(this, u.W);
