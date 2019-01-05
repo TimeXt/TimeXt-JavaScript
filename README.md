@@ -1,9 +1,9 @@
 # TimeXt-JavaScript - master branch
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/releases/timext-2018-10-28-2.min.js)
-[![Version](https://img.shields.io/badge/version-v0.4.0.181028-blue.svg)](https://github.com/TimeXt/TimeXt-JavaScript/releases)
-[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](https://github.com/TimeXt/TimeXt-JavaScript/tree/master/coverage/)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2018-10-28-2.min.js)
+[![Version](https://img.shields.io/badge/version-v0.4.0.181028-blue.svg)](releases)
+[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](coverage)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
@@ -75,4 +75,4 @@ const threeWeeksAgo = Date.now.minus(Number(3).toWeeks());
 
 ## License
 
-TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](https://github.com/TimeXt/TimeXt-JavaScript/blob/master/LICENSE.md) for details.
+TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](LICENSE.md) for details.
