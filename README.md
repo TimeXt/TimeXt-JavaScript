@@ -1,7 +1,7 @@
 # TimeXt-JavaScript - develop branch
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2018-10-28-2.min.js)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-01-28-1.min.js)
 [![Version](https://img.shields.io/badge/version-v0.4.1.190128-blue.svg)](releases)
 [![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](coverage)
 
