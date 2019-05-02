@@ -1,12 +1,13 @@
-# TimeXt-JavaScript - master branch
+# TimeXt-JavaScript
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-01-28-1.min.js)
-[![Version](https://img.shields.io/badge/version-v0.4.1.190128-blue.svg)](releases)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-05-02-1.min.js)
+[![Version](https://img.shields.io/badge/version-v0.5.0-blue.svg)](releases)
 [![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](coverage)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-<a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
+[![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
