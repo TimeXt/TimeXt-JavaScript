@@ -1,9 +1,9 @@
 # TimeXt-JavaScript
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-05-02-1.min.js)
-[![Version](https://img.shields.io/badge/version-v0.5.0-blue.svg)](releases)
-[![CodeCoverage](https://img.shields.io/badge/codeCoverage-98-green.svg)](coverage)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-05-26-1.min.js)
+[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](releases)
+[![CodeCoverage](https://img.shields.io/badge/codeCoverage-99-green.svg)](coverage)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
@@ -11,7 +11,7 @@
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-This minimized ( < 3kB) library shall help to reduce code like
+This minimized ( < 6kB) library shall help to reduce code like
 
 ```javascript
 const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds
@@ -74,6 +74,39 @@ const threeWeeksAgo = Date.now.minus(Number(3).toWeeks());
 
 ```
 
+Since version 0.6.0 TimeXt has new extensions for the long type to display this number value in a human readable string format.
+
+```javascript
+const readableStringFromMilliseconds = Number(34325055574).formatMilliseconds() // 56 weeks, 5 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds
+const readableStringFromSeconds = Number(4350554).formatSeconds() // 7 weeks, 1 day, 8 hours, 29 minutes, 14 seconds
+const readableStringFromMinutes = Number(432555).formatMinutes() // 42 weeks, 6 days, 9 hours, 15 minutes
+const readableStringFromHours = Number(4574).formatHours() // 27 weeks, 1 day, 14 hours
+```
+
 ## License
 
 TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](LICENSE.md) for details.
+
+```
+MIT License
+
+Copyright (c) 2018 - 2019 GuepardoApps (Jonas Schubert)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
