@@ -1,9 +1,13 @@
 # TimeXt-JavaScript
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-05-26-1.min.js)
-[![Version](https://img.shields.io/badge/version-0.6.0-blue.svg)](releases)
-[![CodeCoverage](https://img.shields.io/badge/codeCoverage-99-green.svg)](coverage)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-07-14-4.min.js)
+[![Version](https://img.shields.io/badge/version-0.7.0-blue.svg)](releases)
+
+[![CodeCoverageStatements](https://img.shields.io/badge/Statements-100-green.svg)](coverage)
+[![CodeCoverageBranch](https://img.shields.io/badge/Branch-77-yellow.svg)](coverage)
+[![CodeCoverageFunctions](https://img.shields.io/badge/Functions-100-green.svg)](coverage)
+[![CodeCoverageLines](https://img.shields.io/badge/Lines-100-green.svg)](coverage)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
@@ -11,7 +15,7 @@
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-This minimized ( < 6kB) library shall help to reduce code like
+This minimized ( [![Size](https://img.shields.io/badge/size-4KB-green.svg)](releases/timext-2019-07-14-4.min.js) ) library shall help to reduce code like
 
 ```javascript
 const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds
@@ -32,10 +36,10 @@ const threeDays = timext(3, u.D);
 const elevenHours = timext(11, u.H);
 const sixMinutes = timext(6, u.M);
 const fiftySeconds = timext(50, u.S);
-const hundredMilliseconds = timext(100, u.MS);
+const hundredMillis = timext(100, u.MS);
 
 // Convert to other time units
-const oneDayInMillis = timext(1, u.D).inMilliseconds();    // Converts one day into milliseconds
+const oneDayInMillis = timext(1, u.D).inMillis();          // Converts one day into milliseconds
 const twoWeeksInHours = timext(2, u.W).inHours();          // Converts two weeks into hours
 
 // "operator" + - * /
@@ -58,10 +62,10 @@ const threeDays = Number(3).toDays();                      // returns timext(3, 
 const elevenHours = Number(11).toHours();                  // returns timext(11, u.H)
 const sixMinutes = Number(6).toMinutes();                  // returns timext(6, u.M)
 const fiftySeconds = Number(50).toSeconds();               // returns timext(50, u.S)
-const hundredMilliseconds = Number(100).toMilliseconds();  // returns timext(100, u.MS)
+const hundredMillis = Number(100).toMillis();              // returns timext(100, u.MS)
 
 // Return in other time units
-const oneDayInMillis = Number(1).toDays().inMilliseconds();// Returns one day in milliseconds === 24 * 60 * 60 * 1e3
+const oneDayInMillis = Number(1).toDays().inMillis();      // Returns one day in milliseconds === 24 * 60 * 60 * 1e3
 const twoWeeksInHours = Number(2).toWeeks().inHours();     // Returns two weeks in hours === 2 * 7 * 24
 
 // Convert to other time units
@@ -75,12 +79,14 @@ const threeWeeksAgo = Date.now.minus(Number(3).toWeeks());
 ```
 
 Since version 0.6.0 TimeXt has new extensions for the long type to display this number value in a human readable string format.
+Since version 0.7.0 TimeXt supports decimal numbers.
 
 ```javascript
-const readableStringFromMilliseconds = Number(34325055574).formatMilliseconds() // 56 weeks, 5 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds
+const readableStringFromMillis = Number(34325055574).formatMillis() // 56 weeks, 5 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds
 const readableStringFromSeconds = Number(4350554).formatSeconds() // 7 weeks, 1 day, 8 hours, 29 minutes, 14 seconds
 const readableStringFromMinutes = Number(432555).formatMinutes() // 42 weeks, 6 days, 9 hours, 15 minutes
 const readableStringFromHours = Number(4574).formatHours() // 27 weeks, 1 day, 14 hours
+const readableStringFromDays = Number(24.5).formatDays() // 3 weeks, 3 days, 12 hours
 ```
 
 ## License

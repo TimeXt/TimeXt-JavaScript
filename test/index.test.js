@@ -9,7 +9,7 @@ it('All in conversions should work as expected', () => {
     expect(Math.round(timext(2, u.D).inHours())).toBe(48);
     expect(Math.round(timext(2, u.H).inMinutes())).toBe(120);
     expect(Math.round(timext(2, u.M).inSeconds())).toBe(120);
-    expect(Math.round(timext(2, u.S).inMilliseconds())).toBe(2000);
+    expect(Math.round(timext(2, u.S).inMillis())).toBe(2000);
 })
 
 it('All to conversions should work as expected', () => {
@@ -20,7 +20,7 @@ it('All to conversions should work as expected', () => {
     expect(timext(2, u.D).toHours()).toEqual(timext(48, u.H));
     expect(timext(2, u.H).toMinutes()).toEqual(timext(120, u.M));
     expect(timext(2, u.M).toSeconds()).toEqual(timext(120, u.S));
-    expect(timext(2, u.S).toMilliseconds()).toEqual(timext(2000, u.MS));
+    expect(timext(2, u.S).toMillis()).toEqual(timext(2000, u.MS));
 })
 
 it('All arithmetic operator should work as expected', () => {
@@ -35,6 +35,10 @@ it('All arithmetic operator should work as expected', () => {
 
     expect(timext(2, u.W).divide(2)).toEqual(timext(1, u.W));
     expect(timext(4, u.H).divide(2)).toEqual(timext(2, u.H));
+})
+
+it('divide should throw exception if division by 0', () => {
+    expect(() => timext(2, u.W).divide(0)).toThrow(Error);
 })
 
 it('The increment and decrement operator should work as expected', () => {

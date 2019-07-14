@@ -8,5 +8,5 @@ it('All Number extensions should work as exptected', () => {
     expect(Number(5).toHours()).toEqual(timext(5, u.H));
     expect(Number(5).toMinutes()).toEqual(timext(5, u.M));
     expect(Number(5).toSeconds()).toEqual(timext(5, u.S));
-    expect(Number(5).toMilliseconds()).toEqual(timext(5, u.MS));
+    expect(Number(5).toMillis()).toEqual(timext(5, u.MS));
 })
