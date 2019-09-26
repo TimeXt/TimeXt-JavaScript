@@ -1,8 +1,8 @@
 # TimeXt-JavaScript
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-07-14-4.min.js)
-[![Version](https://img.shields.io/badge/version-0.7.0-blue.svg)](releases)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-09-29-1.min.js)
+[![Version](https://img.shields.io/badge/version-0.7.1-blue.svg)](releases)
 
 [![CodeCoverageStatements](https://img.shields.io/badge/Statements-100-green.svg)](coverage)
 [![CodeCoverageBranch](https://img.shields.io/badge/Branch-77-yellow.svg)](coverage)
@@ -15,7 +15,7 @@
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-This minimized ( [![Size](https://img.shields.io/badge/size-4KB-green.svg)](releases/timext-2019-07-14-4.min.js) ) library shall help to reduce code like
+This minimized ( [![Size](https://img.shields.io/badge/size-4KB-green.svg)](releases/timext-2019-09-29-1.min.js) ) library shall help to reduce code like
 
 ```javascript
 const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds

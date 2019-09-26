@@ -107,29 +107,23 @@ Number.prototype.toMillis = function () { return timext(this, u.MS); }
 
 function formatTimeToString(value, divider) {
     return [
-        { key: 'week', value: { first: 7 * 24 * 60 * 60 * 1000, second: Number.MAX_SAFE_INTEGER } },
-        { key: 'day', value: { first: 24 * 60 * 60 * 1000, second: 7 } },
-        { key: 'hour', value: { first: 60 * 60 * 1000, second: 24 } },
-        { key: 'minute', value: { first: 60 * 1000, second: 60 } },
-        { key: 'second', value: { first: 1000, second: 60 } },
-        { key: 'millisecond', value: { first: 1, second: 1000 } }
+        { key: 'week', value: [7 * 24 * 60 * 60 * 1000, Number.MAX_SAFE_INTEGER] },
+        { key: 'day', value: [24 * 60 * 60 * 1000, 7] },
+        { key: 'hour', value: [60 * 60 * 1000, 24] },
+        { key: 'minute', value: [60 * 1000, 60] },
+        { key: 'second', value: [1000, 60] },
+        { key: 'millisecond', value: [1, 1000] }
     ]
-        .map(item => ({
-            key: item.key,
-            value: {
-                first: item.value.first / divider,
-                second: item.value.second
-            }
-        }))
-        .map(item => ((value / item.value.first) % item.value.second > 0
-            ? `${Math.trunc((value / item.value.first) % item.value.second)} ${item.key}${(Math.trunc((value / item.value.first) % item.value.second) > 1) ? 's' : ''}`
+        .map((item) => ({ key: item.key, value: [item.value[0] / divider, item.value[1]] }))
+        .map((item) => ((value / item.value[0]) % item.value[1] > 0
+            ? `${Math.trunc((value / item.value[0]) % item.value[1])} ${item.key}${(Math.trunc((value / item.value[0]) % item.value[1]) > 1) ? 's' : ''}`
             : undefined))
-        .filter(item => !!item && item.indexOf('0 ') !== 0);
+        .filter((item) => !!item && item.indexOf('0 ') !== 0);
 }
 
 Number.prototype.formatMillis = function () {
     const stringArray = formatTimeToString(this, 1);
-    return stringArray.length > 0 ? stringArray.join(', ') : '0 milliseconds';
+    return stringArray.length > 0 ? stringArray.join(', ') : '0 millisecond';
 }
 
 Number.prototype.formatSeconds = function () {
