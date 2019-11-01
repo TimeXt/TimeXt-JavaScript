@@ -1,16 +1,15 @@
 {
   "name": "timext-js",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "4kB time library to handle date and time more easily",
   "main": "timext.min.js",
   "types": "",
   "scripts": {
-    "test": "jest",
-    "lint": "./node_modules/.bin/eslint src/* test/* build/*",
     "build": "cross-env BABEL_ENV=build node build",
-    "sauce": "npx karma start karma.sauce.conf.js",
-    "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
-    "size": "size-limit && gzip-size timext.min.js"
+    "lint": "eslint src/* test/* build/*",
+    "pre-push": "npm run test && npm run lint && npm run build && npm run size",
+    "size": "size-limit",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,7 @@
   ],
   "size-limit": [
     {
-      "limit": "4.00 KB",
+      "limit": "3.75 KB",
       "path": "timext.min.js"
     }
   ],
@@ -53,28 +52,25 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "7.6.2",
-    "@babel/core": "7.6.2",
-    "@babel/node": "7.6.2",
-    "@babel/preset-env": "7.6.2",
-    "babel-core": "6.26.3",
-    "babel-jest": "24.9.0",
-    "babel-plugin-external-helpers": "6.22.0",
-    "cross-env": "6.0.0",
-    "eslint": "6.4.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jest": "22.17.0",
-    "gzip-size-cli": "3.0.0",
-    "jasmine-core": "2.99.1",
-    "jest": "24.9.0",
-    "karma": "4.3.0",
-    "karma-jasmine": "1.1.2",
-    "karma-sauce-launcher": "2.0.2",
-    "pre-commit": "1.2.2",
-    "rollup": "1.21.4",
-    "rollup-plugin-babel": "4.3.3",
-    "rollup-plugin-uglify": "6.0.3",
-    "size-limit": "2.1.6"
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@size-limit/preset-small-lib": "^2.1.6",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.2",
+    "gzip-size-cli": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-html-reporter": "^2.6.2",
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.26.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-uglify": "^6.0.3"
   }
 }

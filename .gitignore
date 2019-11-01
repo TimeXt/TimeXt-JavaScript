@@ -15,6 +15,7 @@ coverage
 # build
 /locale
 /plugin
+timext.min.js
 
 #dev
 demo.js
