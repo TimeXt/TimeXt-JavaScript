@@ -26,6 +26,8 @@ docs
 #other
 .travis.yml
 karma.sauce.conf.js
+timext.min.js
+/releases
 
 #folder
 .vs

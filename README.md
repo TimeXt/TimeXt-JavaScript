@@ -2,7 +2,7 @@
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
 [![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-11-01-1.min.js)
-[![Version](https://img.shields.io/badge/version-0.8.0-blue.svg)](releases)
+[![Version](https://img.shields.io/badge/version-0.8.1-blue.svg)](releases)
 
 [![CodeCoverageStatements](https://img.shields.io/badge/Statements-100-green.svg)](coverage)
 [![CodeCoverageBranch](https://img.shields.io/badge/Branch-79-yellow.svg)](coverage)
