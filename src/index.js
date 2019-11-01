@@ -2,24 +2,32 @@ import * as u from './units';
 
 class TimeXt {
 
-    constructor(val, unit) {
-        this.val = val;
-        this.unit = unit;
+    constructor(v, ut) {
+        this.v = v;
+        this.ut = ut;
     }
 
-    inYears() { return (this.val * this.unit) / u.Y; }
+    inCenturies() { return (this.v * this.ut) / u.CE; }
 
-    inWeeks() { return (this.val * this.unit) / u.W; }
+    inDecades() { return (this.v * this.ut) / u.DC; }
 
-    inDays() { return (this.val * this.unit) / u.D; }
+    inYears() { return (this.v * this.ut) / u.Y; }
 
-    inHours() { return (this.val * this.unit) / u.H; }
+    inWeeks() { return (this.v * this.ut) / u.W; }
 
-    inMinutes() { return (this.val * this.unit) / u.M; }
+    inDays() { return (this.v * this.ut) / u.D; }
 
-    inSeconds() { return (this.val * this.unit) / u.S; }
+    inHours() { return (this.v * this.ut) / u.H; }
 
-    inMillis() { return (this.val * this.unit) / u.MS; }
+    inMinutes() { return (this.v * this.ut) / u.M; }
+
+    inSeconds() { return (this.v * this.ut) / u.S; }
+
+    inMillis() { return (this.v * this.ut) / u.MS; }
+
+    toCenturies() { return new TimeXt(this.inCenturies(), u.CE); }
+
+    toDecades() { return new TimeXt(this.inDecades(), u.DC); }
 
     toYears() { return new TimeXt(this.inYears(), u.Y); }
 
@@ -36,35 +44,35 @@ class TimeXt {
     toMillis() { return new TimeXt(this.inMillis(), u.MS); }
 
     plus(t) {
-        this.val = ((this.inMillis() + t.inMillis()) / this.unit) * u.MS;
+        this.v = ((this.inMillis() + t.inMillis()) / this.ut) * u.MS;
         return this;
     }
 
     minus(t) {
-        this.val = ((this.inMillis() - t.inMillis()) / this.unit) * u.MS;
+        this.v = ((this.inMillis() - t.inMillis()) / this.ut) * u.MS;
         return this;
     }
 
-    multiply(val) {
-        this.val *= val;
+    multiply(v) {
+        this.v *= v;
         return this;
     }
 
-    divide(val) {
-        if (val === 0) {
+    divide(v) {
+        if (v === 0) {
             throw Error('Diversion value may not be 0!');
         }
-        this.val /= val;
+        this.v /= v;
         return this;
     }
 
     inc() {
-        this.val++;
+        this.v++;
         return this;
     }
 
     dec() {
-        this.val--;
+        this.v--;
         return this;
     }
 
@@ -77,17 +85,21 @@ class TimeXt {
     toString() { return this.inMillis().toString(); }
 }
 
-const timext = (val, unit) => new TimeXt(val, unit);
+const timext = (v, ut) => new TimeXt(v, ut);
 
 export default timext;
 
 // Date extensions
 
-Date.prototype.plus = function (val) { return new Date(this.getTime() + val.inMillis()); }
+Date.prototype.plus = function (v) { return new Date(this.getTime() + v.inMillis()); }
 
-Date.prototype.minus = function (val) { return new Date(this.getTime() - val.inMillis()); }
+Date.prototype.minus = function (v) { return new Date(this.getTime() - v.inMillis()); }
 
 // Number extensions
+
+Number.prototype.toCenturies = function () { return timext(this, u.CE); }
+
+Number.prototype.toDecades = function () { return timext(this, u.DC); }
 
 Number.prototype.toYears = function () { return timext(this, u.Y); }
 
@@ -105,43 +117,48 @@ Number.prototype.toMillis = function () { return timext(this, u.MS); }
 
 // String format extensions
 
-function formatTimeToString(value, divider) {
+function toStringArray(v, d) {
     return [
-        { key: 'week', value: [7 * 24 * 60 * 60 * 1000, Number.MAX_SAFE_INTEGER] },
-        { key: 'day', value: [24 * 60 * 60 * 1000, 7] },
-        { key: 'hour', value: [60 * 60 * 1000, 24] },
-        { key: 'minute', value: [60 * 1000, 60] },
-        { key: 'second', value: [1000, 60] },
-        { key: 'millisecond', value: [1, 1000] }
+        { k: 'week', v: [604800 * 1e3, Number.MAX_SAFE_INTEGER] },
+        { k: 'day', v: [86400 * 1e3, 7] },
+        { k: 'hour', v: [3600 * 1e3, 24] },
+        { k: 'minute', v: [60 * 1e3, 60] },
+        { k: 'second', v: [1e3, 60] },
+        { k: 'millisecond', v: [1, 1e3] }
     ]
-        .map((item) => ({ key: item.key, value: [item.value[0] / divider, item.value[1]] }))
-        .map((item) => ((value / item.value[0]) % item.value[1] > 0
-            ? `${Math.trunc((value / item.value[0]) % item.value[1])} ${item.key}${(Math.trunc((value / item.value[0]) % item.value[1]) > 1) ? 's' : ''}`
+        .map((i) => ({ k: i.k, v: [i.v[0] / d, i.v[1]] }))
+        .map((i) => ((v / i.v[0]) % i.v[1] > 0
+            ? `${Math.trunc((v / i.v[0]) % i.v[1])} ${i.k}${(Math.trunc((v / i.v[0]) % i.v[1]) > 1) ? 's' : ''}`
             : undefined))
-        .filter((item) => !!item && item.indexOf('0 ') !== 0);
+        .filter((i) => !!i && i.indexOf('0 ') !== 0);
 }
 
 Number.prototype.formatMillis = function () {
-    const stringArray = formatTimeToString(this, 1);
-    return stringArray.length > 0 ? stringArray.join(', ') : '0 millisecond';
+    const array = toStringArray(this, 1);
+    return array.length > 0 ? array.join(', ') : '0 millisecond';
 }
 
 Number.prototype.formatSeconds = function () {
-    const stringArray = formatTimeToString(this, 1000);
-    return stringArray.length > 0 ? stringArray.join(', ') : (this * 1000).formatMillis();
+    const array = toStringArray(this, 1e3);
+    return array.length > 0 ? array.join(', ') : (this * 1e3).formatMillis();
 }
 
 Number.prototype.formatMinutes = function () {
-    const stringArray = formatTimeToString(this, 60 * 1000);
-    return stringArray.length > 0 ? stringArray.join(', ') : (this * 60).formatSeconds();
+    const array = toStringArray(this, 60 * 1e3);
+    return array.length > 0 ? array.join(', ') : (this * 60).formatSeconds();
 }
 
 Number.prototype.formatHours = function () {
-    const stringArray = formatTimeToString(this, 60 * 60 * 1000);
-    return stringArray.length > 0 ? stringArray.join(', ') : (this * 60).formatMinutes();
+    const array = toStringArray(this, 3600 * 1e3);
+    return array.length > 0 ? array.join(', ') : (this * 60).formatMinutes();
 }
 
 Number.prototype.formatDays = function () {
-    const stringArray = formatTimeToString(this, 24 * 60 * 60 * 1000);
-    return stringArray.length > 0 ? stringArray.join(', ') : (this * 24).formatHours();
+    const array = toStringArray(this, 86400 * 1e3);
+    return array.length > 0 ? array.join(', ') : (this * 24).formatHours();
+}
+
+Number.prototype.formatWeeks = function () {
+    const array = toStringArray(this, 604800 * 1e3);
+    return array.length > 0 ? array.join(', ') : (this * 7).formatDays();
 }

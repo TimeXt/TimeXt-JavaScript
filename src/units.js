@@ -1,7 +1,9 @@
-export const Y = 365 * 24 * 60 * 60 * 1e3;
-export const W = 7 * 24 * 60 * 60 * 1e3;
-export const D = 24 * 60 * 60 * 1e3;
-export const H = 60 * 60 * 1e3;
+export const CE = 3155760000 * 1e3;
+export const DC = 315576000 * 1e3;
+export const Y = 31557600 * 1e3;
+export const W = 604800 * 1e3;
+export const D = 86400 * 1e3;
+export const H = 3600 * 1e3;
 export const M = 60 * 1e3;
 export const S = 1e3;
 export const MS = 1;
