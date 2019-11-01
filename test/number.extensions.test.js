@@ -1,7 +1,9 @@
 import timext from '../src/index';
 import * as u from '../src/units';
 
-it('All Number extensions should work as exptected', () => {
+test('All Number extensions should work as exptected', () => {
+    expect(Number(5).toCenturies()).toEqual(timext(5, u.CE));
+    expect(Number(5).toDecades()).toEqual(timext(5, u.DC));
     expect(Number(5).toYears()).toEqual(timext(5, u.Y));
     expect(Number(5).toWeeks()).toEqual(timext(5, u.W));
     expect(Number(5).toDays()).toEqual(timext(5, u.D));
