@@ -96,6 +96,12 @@ const readableStringFromDays = Number(24.5).formatDays() // 3 weeks, 3 days, 12 
 const readableStringFromWeeks = Number(24.5).formatWeeks() // 24 weeks, 3 days, 12 hours
 ```
 
+## Contributors
+
+| [<img alt="GuepardoApps" src="https://avatars0.githubusercontent.com/u/21952813?v=4&s=117" width="117"/>](https://github.com/GuepardoApps) |
+| :---------------------------------------------------------------------------------------------------------------------------------------: |
+| [GuepardoApps](https://github.com/GuepardoApps) |
+
 ## License
 
 TimeXt-JavaScript is distributed under the MIT license. [See LICENSE](LICENSE.md) for details.
