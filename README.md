@@ -1,3 +1,7 @@
+<h1 align="center">
+	<img width="90" src="logo.png" alt="timext">
+</h1>
+
 # TimeXt-JavaScript
 
 [![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
