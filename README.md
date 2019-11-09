@@ -4,10 +4,10 @@
 [![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-11-01-1.min.js)
 [![Version](https://img.shields.io/badge/version-0.8.1-blue.svg)](releases)
 
-[![CodeCoverageStatements](https://img.shields.io/badge/Statements-100-green.svg)](coverage)
-[![CodeCoverageBranch](https://img.shields.io/badge/Branch-79-yellow.svg)](coverage)
-[![CodeCoverageFunctions](https://img.shields.io/badge/Functions-100-green.svg)](coverage)
-[![CodeCoverageLines](https://img.shields.io/badge/Lines-100-green.svg)](coverage)
+[![CodeCoverageStatements](https://img.shields.io/badge/Statements-100%25-green.svg)](coverage)
+[![CodeCoverageBranch](https://img.shields.io/badge/Branch-79%25-yellow.svg)](coverage)
+[![CodeCoverageFunctions](https://img.shields.io/badge/Functions-100%25-green.svg)](coverage)
+[![CodeCoverageLines](https://img.shields.io/badge/Lines-100%25-green.svg)](coverage)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
