@@ -2,8 +2,12 @@
   "name": "timext-js",
   "version": "0.8.1",
   "description": "4kB time library to handle date and time more easily",
-  "main": "timext.min.js",
-  "types": "",
+  "author": {
+    "name": "Jonas Schubert",
+    "url": "https://github.com/JonasSchubert",
+    "email": "jonas.schubert.projects@web.de"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "cross-env BABEL_ENV=build node build",
     "lint": "eslint src/* test/* build/*",
@@ -11,6 +15,8 @@
     "size": "size-limit",
     "test": "jest"
   },
+  "main": "timext.min.js",
+  "types": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/TimeXt/TimeXt-JavaScript.git"
@@ -20,8 +26,6 @@
     "extensions",
     "time"
   ],
-  "author": "GuepardoApps (Jonas Schubert)",
-  "license": "MIT",
   "pre-commit": [
     "lint"
   ],
