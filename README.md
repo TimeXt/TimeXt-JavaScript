@@ -2,28 +2,38 @@
 	<img width="90" src="logo.png" alt="timext">
 </h1>
 
-# TimeXt-JavaScript
+<p align="center"><h1 style="text-align: center;">TimeXt-JavaScript</h1></p>
 
-[![Npm](https://img.shields.io/badge/npm-getit-red.svg)](https://www.npmjs.com/package/timext-js)
-[![Build](https://img.shields.io/badge/build-success-green.svg)](releases/timext-2019-11-01-1.min.js)
-[![Version](https://img.shields.io/badge/version-0.8.1-blue.svg)](releases)
+<p align="center">
+  <a href="https://www.npmjs.com/package/timext-js"><img src="https://img.shields.io/npm/v/timext-js.svg"/> <img src="https://img.shields.io/npm/dt/timext-js.svg"/></a>
+  <a href="http://packagequality.com/#?package=timext-js"><img src="http://npm.packagequality.com/shield/timext-js.svg"/></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
+  <a href="https://github.com/TimeXt/timext-JavaScript/"><img src="https://img.shields.io/github/stars/TimeXt/timext-JavaScript.svg"/></a>
+</p>
 
-[![CodeCoverageStatements](https://img.shields.io/badge/Statements-100%25-green.svg)](coverage)
-[![CodeCoverageBranch](https://img.shields.io/badge/Branch-79%25-yellow.svg)](coverage)
-[![CodeCoverageFunctions](https://img.shields.io/badge/Functions-100%25-green.svg)](coverage)
-[![CodeCoverageLines](https://img.shields.io/badge/Lines-100%25-green.svg)](coverage)
+<p align="center"><h6 style="text-align: center;">Unit test coverage</h6></p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+<p align="center">
+  <a href="./test"><img src="https://img.shields.io/badge/Statements-100%25-green.svg"/></a>
+  <a href="./test"><img src="https://img.shields.io/badge/Branch-79%25-yellow.svg"/></a>
+  <a href="./test"><img src="https://img.shields.io/badge/Functions-100%25-green.svg"/></a>
+  <a href="./test"><img src="https://img.shields.io/badge/Lines-100%25-green.svg"/></a>
+</p>
+
+<p align="center"><h6 style="text-align: center;">Support me</h6></p>
+
+<p align="center">
+  <a href="https://www.paypal.me/GuepardoApps"><img src="https://img.shields.io/badge/paypal-support-blue.svg"/></a>
+</p>
 
 First of all many thanks to [Kizitonwose](https://github.com/kizitonwose/Time) for the original idea and already awesome library!
 
-- This minimized ( [![Size](https://img.shields.io/badge/size-4KB-green.svg)](releases/timext-2019-11-01-1.min.js) ) library shall help to reduce code like.
+- This minimized ( [![Size](https://img.shields.io/badge/size-4KB-green.svg)](releases/timext-2019-11-24-1.min.js) ) library shall help to reduce code like.
 - Minified and gzipped only `876 B`!
 
 ```javascript
-const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliSeconds
+const dayInMillis = 24 * 60 * 60 * 1000;                   // Represent a day in milliseconds
 ```
 
 ## How to use
@@ -93,11 +103,11 @@ Since version 0.8.0 TimeXt has values for decades and centuries and  more precis
 
 ```javascript
 const readableStringFromMillis = Number(34325055574).formatMillis() // 56 weeks, 5 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds
-const readableStringFromSeconds = Number(4350554).formatSeconds() // 7 weeks, 1 day, 8 hours, 29 minutes, 14 seconds
-const readableStringFromMinutes = Number(432555).formatMinutes() // 42 weeks, 6 days, 9 hours, 15 minutes
-const readableStringFromHours = Number(4574).formatHours() // 27 weeks, 1 day, 14 hours
-const readableStringFromDays = Number(24.5).formatDays() // 3 weeks, 3 days, 12 hours
-const readableStringFromWeeks = Number(24.5).formatWeeks() // 24 weeks, 3 days, 12 hours
+const readableStringFromSeconds = Number(4350554).formatSeconds()   // 7 weeks, 1 day, 8 hours, 29 minutes, 14 seconds
+const readableStringFromMinutes = Number(432555).formatMinutes()    // 42 weeks, 6 days, 9 hours, 15 minutes
+const readableStringFromHours = Number(4574).formatHours()          // 27 weeks, 1 day, 14 hours
+const readableStringFromDays = Number(24.5).formatDays()            // 3 weeks, 3 days, 12 hours
+const readableStringFromWeeks = Number(24.5).formatWeeks()          // 24 weeks, 3 days, 12 hours
 ```
 
 ## Contributors
