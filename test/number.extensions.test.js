@@ -1,5 +1,5 @@
-import timext from '../src/index';
-import * as u from '../src/units';
+import timext from '../src/index.js';
+import * as u from '../src/units.js';
 
 test('All Number extensions should work as exptected', () => {
     expect(Number(5).toCenturies()).toEqual(timext(5, u.CE));

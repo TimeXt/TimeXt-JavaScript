@@ -1,4 +1,4 @@
-import '../src/index';
+import '../src/index.js';
 
 describe('formatMillis', () => {
     test('should work as expected for integer', () => {

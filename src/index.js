@@ -1,4 +1,4 @@
-import * as u from './units';
+import * as u from './units.js';
 
 class TimeXt {
 

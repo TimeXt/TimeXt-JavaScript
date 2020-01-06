@@ -1,4 +1,4 @@
-import '../src/index';
+import '../src/index.js';
 
 test('All arithmetic operator should work as exptected', () => {
     expect((new Date(2018, 10, 15, 20, 14, 0, 0).plus(Number(3).toHours())).getHours()).toBe(23);

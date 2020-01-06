@@ -1,5 +1,5 @@
-import timext from '../src/index';
-import * as u from '../src/units';
+import timext from '../src/index.js';
+import * as u from '../src/units.js';
 
 test('All in conversions should work as expected', () => {
     expect(Math.round(timext(500, u.Y).inCenturies())).toBe(5);
